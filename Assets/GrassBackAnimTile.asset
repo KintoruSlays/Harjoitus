@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: Grass
+  m_Name: GrassBackAnimTile
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: 844667710, guid: 3be0dd59e0835544bb2952c89f465b10, type: 3}
+  - {fileID: -69162250, guid: 3be0dd59e0835544bb2952c89f465b10, type: 3}
+  - {fileID: -1780354623, guid: 3be0dd59e0835544bb2952c89f465b10, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
   m_AnimationStartTime: 0
-  m_AnimationStartFrame: 0
+  m_AnimationStartFrame: 1
   m_TileColliderType: 0
   m_TileAnimationFlags: 0

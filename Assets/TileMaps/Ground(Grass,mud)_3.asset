@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: WallV6_13
+  m_Name: Ground(Grass,mud)_3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 49628136, guid: dbc6e404f2cb582489d9d2dfee87df6b, type: 3}
+  m_Sprite: {fileID: 610845420, guid: 0d615924837183f4a961d15ad3dc9a9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
