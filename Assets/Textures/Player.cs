@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float movementSpeed = 1f;
 
+    public float sprintSpeed;
+
     public float jumpForce = 2f;
 
     SpriteRenderer rend;
@@ -28,15 +30,38 @@ public class Player : MonoBehaviour
     void Update()
     {
         anim.SetBool("moving", false);
+        //walk
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector2.left * movementSpeed * Time.deltaTime, Space.World);
             rend.flipX = true;
             anim.SetBool("moving", true);
         }
+
+        //sprint
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(Vector2.left * sprintSpeed * Time.deltaTime, Space.World);
+            rend.flipX = true;
+            anim.SetBool("moving", true);
+        }
+
+        //walk
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector2.right * movementSpeed * Time.deltaTime, Space.World);
+            rend.flipX = false;
+            anim.SetBool("moving", true);
+        }
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("moving", false);
+        }
+
+        //sprint
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(Vector2.right * sprintSpeed * Time.deltaTime, Space.World);
             rend.flipX = false;
             anim.SetBool("moving", true);
         }
@@ -51,8 +76,7 @@ public class Player : MonoBehaviour
             Debug.Log("Ground found");
         }
         anim.SetBool("grounded", grounded);
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
