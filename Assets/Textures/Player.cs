@@ -68,8 +68,8 @@ public class Player : MonoBehaviour
 
         bool grounded = false;
         LayerMask layerMask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.7f, layerMask);
-        Debug.DrawRay(transform.position, Vector2.down * 0.7f, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.45f, layerMask);
+        Debug.DrawRay(transform.position, Vector2.down * 0.45f, Color.red);
         if(hit)
         {
             grounded = true;
